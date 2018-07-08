@@ -1,0 +1,20 @@
+# This is a sort test program
+
+CFLAGS += -std=c99 -g -Wall
+
+APP := test
+OBJS := test.o slist.o
+
+all : $(APP)
+
+run : $(APP)
+	./$(APP)
+
+$(APP) : $(OBJS)
+
+$(OBJS) : slist.h
+
+.PHONY :
+clean:
+	rm -f *.o *.exe test
+
